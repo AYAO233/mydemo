@@ -12,8 +12,8 @@
     $sysversion = PHP_VERSION;      //获取PHP服务器版本
     
     //以下两条代码链接MySQL数据库并获取MySQL数据库版本信息
-    mysqli_connect("localhost", "root", "");
-    $mysqlinfo = mysqli_get_client_version();
+    $linkmysql = mysqli_connect("localhost", "root", "");
+    $mysqlinfo = mysqli_get_server_info($linkmysql);
 
     //从服务器中获取GD库的信息
     if (function_exists("gd_info")) {
